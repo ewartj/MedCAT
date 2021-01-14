@@ -20,9 +20,6 @@ term_dict = {
 "tag_type" : ["clinician", "patient_other"]
     }
 
-print(os.getcwd())
-os.chdir("/home/jonnysheldon/Documents/MedCAT/dictionaries/")
-print(os.getcwd())
 ## Read in the cvs files 
 name_df = pd.read_csv("names.csv")
 nhs = pd.read_csv("nhsNumber/nhs_numbers.txt",sep="\t")
@@ -50,6 +47,29 @@ def random_with_N_digits(n):
     range_end = (10**n)-1
     return str(randint(range_start, range_end))
 
+def mobile(amount_generated):
+    mobile = []
+    allowed_3rd_numbs = [1,2,3,4,5,7,8,9]
+    per_choice = amount_generated / len(allowed_3rd_numbs)
+    for i in range(0,len(allowed_3rd_numbs)):
+        i = allowed_3rd_numbs[i]
+        for j in range(0, int(per_choice)):
+            k = '07' + str(i) + random_with_N_digits(9)
+            mobile.append(k)
+    return mobile
+
+def h_num(amount_generated):
+    alpha_used = ['V','M','P','D','F','R','K','A','Q','E','Z','C','N','B','O','S','G','X','H','J',
+            'T','I','W','U','L']
+    per_choice = amount_generated / len(alpha_used)
+    h_num = []
+    for i in (0,len(alpha_used) - 1):
+        alpha = alpha_used[i]
+        for j in range(0, int(per_choice)):
+            k = alpha + random_with_N_digits(6)
+            h_num.append(k)
+    return h_num
+
 ## Names ##
 # get lists of personal terms 
 name = name_df.name.tolist()
@@ -65,20 +85,11 @@ landline = address["Phone number"].tolist()
 just_landline  = [x.replace('(', '').replace(')', '') for x in landline]
 #Modile
 #Based on allowed charecters https://www.quora.com/What-is-the-format-for-mobile-numbers-in-the-UK
-
-def mobile(amount_generated):
-    mobile = []
-    allowed_3rd_numbs = [1,2,3,4,5,7,8,9]
-    per_choice = amount_generated / len(allowed_3rd_numbs)
-    for i in range(0,len(allowed_3rd_numbs)):
-        i = allowed_3rd_numbs[i]
-        for j in range(0, int(per_choice)):
-            k = '07' + str(i) + random_with_N_digits(9)
-            mobile.append(k)
-    return mobile
-
 mob = mobile(2000)
 #print(mob)
+# Hospital number
+hosp_number = h_num(2000)
+print(hosp_number)
 
 ## addresses
 
@@ -93,7 +104,6 @@ country = address["country"].tolist()
 postcode = address["Postcode"].tolist()
 
 ## Date
-
 days = day()  
 #print(days)  
 month_numb = [1,2,3,4,5,6,7,8,9,10,11,12]
@@ -105,9 +115,9 @@ years = year()
 term_dict_egs = {
 "names" : [name,surname],
 "addresses" : [address_list, city, country, postcode],
-"numbers" : [nhs_number,landline, mob],
+"numbers" : [nhs_number,landline, mob, hosp_number],
 "date" : [day,month_numb, month_text, month_short_text,year],
 "tag_type" : ["clinician", "patient_other"]
     }
 
-print(term_dict_egs)
+#print(term_dict_egs)
