@@ -10,6 +10,8 @@ __For example:__
 <br>"Anthony suffers from Epilepsy."
 <br>"\[Patient name\] suffers from Epilepsy."
 
+This repository is currently incomplete and is not fit for use.
+
 ## Personal information redacted
 
 A brief overview of the categories of personal information redacted.
