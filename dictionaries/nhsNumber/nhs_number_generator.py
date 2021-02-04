@@ -16,6 +16,7 @@ FROM: https://github.com/Iain-S/nhs_number_generator
 """
 
 from __future__ import unicode_literals
+import random
 from random import randint, choice
 from argparse import ArgumentParser
 
@@ -99,6 +100,8 @@ def random_nhs_number_generator(ranges=[(400000000, 499999999), (600000000, 7088
         Args:
         ranges [(int, int), ...]: Specify the ranges for the sequence.  You must exclude the check digits.
     """
+    # JS added a random seed
+    random.seed(42)
     for _range in ranges:
         if _range[1] < _range[0]:
             raise ValueError("The high end of the range should not be lower than the low end.")
