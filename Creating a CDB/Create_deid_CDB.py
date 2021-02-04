@@ -1,21 +1,16 @@
-# TODO: create a deid CDB from the deid terminology
-
 from medcat.cdb import CDB
-from medcat.cat import CAT
-from medcat.utils.vocab import Vocab
-from medcat.prepare_cdb import PrepareCDB
-import os
-import pandas as pd
+from medcat.cdb_maker import CDBMaker
+from medcat.config import Config
 
-vocab_dat =  # vocab path
-cdb_csv =  # deid terminology path
+# Specify cdb name and path to csvs
+cdb_name = "cdb_name.dat"
+csv_path_list = [" path to list of csvs here"]
 
-deid_csv = pd.read_csv(cdb_csv)
+# Create CDB
+config = Config()
+maker = CDBMaker(config)
+cdb = maker.prepare_csvs(csv_path_list, full_build=True)
+cdb.save(cdb_name)
 
-vocab = Vocab()
-vocab.load_dict(vocab_dat)
-prep = PrepareCDB(vocab=vocab)
-csv_paths = [cdb_csv]
-cdb = prep.prepare_csvs(csv_paths)
-
-cdb.save_dict('./medcat_models/snomed_cdb.dat')
+# Load the newly created cdb:
+cdb2 = CDB.load(cdb_name)
