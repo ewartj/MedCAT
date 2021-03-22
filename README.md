@@ -26,7 +26,8 @@ A brief overview of the categories of personal information redacted.
 
 ## Concept Terminology Structure
 
-The structure of the created terminology.
+The structure of the created terminology:
+
 ![Created from creating_a_deid_terminology](./Creating_a_de-identification_terminology/DeID_teminology.png)
 
 
