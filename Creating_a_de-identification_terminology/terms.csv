@@ -1,0 +1,25 @@
+concept,parent,value
+de-identification root concept,“”,0
+name,de-identification root concept,1000
+forename,name,1100
+surname,name,1200
+initials,name,1300
+contact details,de-identification root concept,2000
+address,contact details,2100
+address line,address,2110
+postcoce,address,2120
+telephone,address,2200
+email,address,2300
+identification number,de-identification root concept,2000
+passport ,identification number,2410
+driving license,identification number,2420
+national insurance,identification number,2430
+healthcare identifier,de-identification root concept,3000
+nhs number,healthcare identifier,3100
+hospital number,healthcare identifier,3200
+emergency department number,healthcare identifier,3300
+lab number,healthcare identifier,3400
+gmc number,healthcare identifier,3500
+date,de-identification root concept,4000
+date of birth,date,4100
+website,de-identification root concept,5000

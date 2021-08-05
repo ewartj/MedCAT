@@ -1,0 +1,25 @@
+name,cui,ontologies,name_status,type_ids,description
+de-identification_root_concept,R0000,cat_anon,P,,root concept of de-identification
+name,N1000,cat_anon,P,,surname and forename
+contact_details,C2000,cat_anon,P,,non hospital identification and contact details
+healthcare_identifier,H3000,cat_anon,P,,hospital derived ID
+date,D4000,cat_anon,P,,personal dates
+fore_name,N1100,cat_anon,P,,"given name including middle names (each name, e.g. first and middle name, is treated as a separate concept)"
+surname,N1200,cat_anon,P,,all surnames
+initials,N1300,cat_anon,P,,"all initials (initials that aren't seperated by a space are treated as a single concept, e.g. EJ)"
+address,C2100,cat_anon,P,,address and postcode (including a comma or full stop at the end of the address string)
+address_line,C2110,cat_anon,P,,all address line items including city and country
+postcode,C2120,cat_anon,P,,all postcodes
+telephone_number,C2200,cat_anon,P,,telephone numbers both mobile and landline
+email,C2300,cat_anon,P,,email addresses
+identification,C2400,cat_anon,P,,non hospital identification
+passport_number,C2410,cat_anon,P,,passport number
+driving_licence_number,C2420,cat_anon,P,,driving licence
+national_insurance,C2430,cat_anon,P,,all national insurance numbers
+nhs_number,H3100,cat_anon,P,,nhs numbers
+hospital_number,H3200,cat_anon,P,,hospital number from kings college hospital and other trusts
+emergency_department_number,H3300,cat_anon,P,,number given by kings college hospital emergency number
+lab_number,H3400,cat_anon,P,,all lab ids used to identify samples
+gmc_number,H3500,cat_anon,P,,General Medical Council (GMC) number
+date_of_birth,H4100,cat_anon,P,,date of birth
+url,C2500,cat_anon,P,,all websites associated with an individual
